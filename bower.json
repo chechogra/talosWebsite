@@ -2,6 +2,21 @@
   "name": "taloswebsite",
   "private": true,
   "dependencies": {
-    "jquery": "~2.1.1"
+    "jquery": "~2.1.1",
+    "gsap": "GreenSock-JS#^1.18.2",
+    "scrollmagic": "2.0.5"
+  },
+  "overrides": {
+    "gsap": {
+      "main": [
+        "./src/uncompressed/TweenMax.js"
+      ]
+    },
+    "scrollmagic": {
+      "main": [
+        "./scrollmagic/uncompressed/ScrollMagic.js",
+        "./scrollmagic/uncompressed/plugins/animation.gsap.js"
+      ]
+    }
   }
 }
