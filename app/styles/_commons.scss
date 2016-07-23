@@ -1,8 +1,11 @@
-body {
+html {
   font-family: 'Lato', sans-serif;
-  margin: 0;
   font-size: 62.5%;
   line-height: 1.4;
+}
+
+html, body{
+  margin: 0;
 }
 
 .site {
