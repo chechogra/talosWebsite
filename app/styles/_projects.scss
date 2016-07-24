@@ -13,24 +13,32 @@
     .project-title{
       color: white;
       text-transform: uppercase;
-      position: absolute;
-      top: 40vh;
-      left: 20vw;
       z-index: 3;
       line-height: 1.1;
       padding-right: 10vw;
-
+      position: absolute;
+      top: 40vh;
+      left: 20vw;
+      @media screen and (max-width: map-get($grid-breakpoints, sm)) {
+        left: 15vw;
+      }
 
       h1{
         font-weight: 900;
-        font-size: 9vw;
         margin-bottom: 2vh;
         text-shadow: 0.1vw 0.1vw 0.1vw #82898E;
+        font-size: 9vw;
+        @media screen and (max-width: map-get($grid-breakpoints, sm)) {
+          font-size: 12vw;
+        }
       }
       h2{
         font-weight: 600;
-        font-size: 4vw;
         text-shadow: 0.1vw 0.1vw 0.1vw #82898E;
+        font-size: 4vw;
+        @media screen and (max-width: map-get($grid-breakpoints, sm)) {
+          font-size: 7vw;
+        }
       }
     }
   }

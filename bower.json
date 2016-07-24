@@ -5,6 +5,7 @@
     "jquery": "~2.1.1",
     "gsap": "GreenSock-JS#^1.18.2",
     "scrollmagic": "2.0.5",
+    "tether": "^1.3.3",
     "bootstrap": "v4.0.0-alpha.2"
   },
   "overrides": {
