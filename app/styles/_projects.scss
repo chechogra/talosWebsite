@@ -1,3 +1,22 @@
+.slide{
+  position: relative;
+  overflow: hidden;
+  .slide-wp{
+    position: relative;
+    max-width: $slidesWrapperMaxWidth;
+    padding: 0 10px;
+    margin: 0 auto;
+  }
+}
+
+.bcg{
+  background: no-repeat center center;
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
 .project{
   #slide_1{
     height: 100vh;
@@ -48,7 +67,7 @@
   }
 
   #slide_2{
-    padding: 40px 0;
+    padding: 50px 0;
     text-align: center;
     h2{
       text-transform: uppercase;
@@ -56,24 +75,38 @@
       font-weight: 900;
       line-height: 1;
       font-size: 9vw;
+      margin: 0 auto;
 
       @media screen and (min-width: map-get($grid-breakpoints, sm)) {
-        font-size: 7vw;
-        padding: 0 50px;
+        font-size: 8vw;
+      }
+
+      @media screen and (min-width: map-get($grid-breakpoints, md)) {
+        max-width: 550px;
+        font-size: 6vw;
+      }
+      @media screen and (min-width: map-get($grid-breakpoints, lg)) {
+        max-width: 650px;
+        @include font-size(8);
       }
     }
     img{
-      transform: translateY(-28px);
+      transform: translateY(-20px);
       max-width: 80%;
       @media screen and (min-width: map-get($grid-breakpoints, sm)) {
-        transform: translateY(-38px);
+        transform: translateY(-30px);
         max-width: 450px;
+      }
+
+      @media screen and (min-width: map-get($grid-breakpoints, lg)) {
+        transform: translateY(-40px);
       }
     }
     p{
       color: #FAFAFA;
       padding: 0 20px;
       margin: 0 auto;
+      line-height: 1.1;
       @include font-size(1.5);
       @media screen and (min-width: map-get($grid-breakpoints, sm)) {
         @include font-size(2.2  );
@@ -81,20 +114,48 @@
       }
     }
   }
-}
+  #slide_3{
+    min-height: $slidesMinHeight;
+    .slide-wp{
+      padding-top: 40px;
+    }
+    .slide3-left{
+      padding: 30px 0 0;
+      h3{
+        font-weight: 600;
+        @include font-size(2.2);
+        margin-bottom: 15px;
+        color: #363333;
+      }
+      p{
+        @include font-size(1.5);
+        color: #777777;
+      }
+    }
+    .slide3-right{
+      padding: 30px 0 0;
+      h3{
+        @include font-size(1.6);
+        text-transform: uppercase;
+        color: #B8B8B8;
+      }
 
-.slide{
-  position: relative;
-  overflow: hidden;
-  .slide-wp{
-    position: relative;
+      p{
+        @include font-size(1.5);
+        color: #494949;
+        margin-bottom: 30px;
+      }
+      .icn-wp{
+        margin: 10px 0 30px;
+        @include font-size(2.2);
+        .icon{
+          margin-right: 20px;
+          color: #737373;
+          &.on{
+            color: #D24F2E;
+          }
+        }
+      }
+    }
   }
-}
-
-.bcg{
-  background: no-repeat center center;
-  background-size: cover;
-  position: absolute;
-  width: 100%;
-  height: 100%;
 }
