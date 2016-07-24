@@ -6,7 +6,7 @@
       left: 0;
       z-index: 2;
       width: 35vw;
-      height: 100vh;
+      height: 100%;
       opacity: 0.3;
       filter: Alpha(opacity=30);
     }
@@ -52,4 +52,5 @@
 
 .fs{
   height: 100vh;
+  min-height: $slidesMinHeight;
 }
