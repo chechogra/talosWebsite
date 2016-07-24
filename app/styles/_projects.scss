@@ -1,43 +1,54 @@
 .project{
   #slide_1{
     .colored-layer{
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 2;
-      width: 35vw;
+      position: relative;
+      width: 40vw;
       height: 100%;
-      opacity: 0.3;
-      filter: Alpha(opacity=30);
-    }
-    .project-title{
-      color: white;
-      text-transform: uppercase;
-      z-index: 3;
-      line-height: 1.1;
-      padding-right: 10vw;
-      position: absolute;
-      top: 40vh;
-      left: 20vw;
-      @media screen and (max-width: map-get($grid-breakpoints, sm)) {
-        left: 15vw;
+
+      .colored-bg{
+        opacity: 0.3;
+        filter: Alpha(opacity=30);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
       }
 
-      h1{
-        font-weight: 900;
-        margin-bottom: 2vh;
-        text-shadow: 0.1vw 0.1vw 0.1vw #82898E;
-        font-size: 9vw;
-        @media screen and (max-width: map-get($grid-breakpoints, sm)) {
-          font-size: 12vw;
+      .project-title{
+        color: white;
+        text-transform: uppercase;
+        line-height: 1.1;
+        padding: 0 40px;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(50%, -30%);
+
+        h1{
+          font-weight: 900;
+          margin-bottom: 2vh;
+          text-shadow: 0.1vw 0.1vw 0.1vw #82898E;
+          font-size: 9vw;
+          @media screen and (max-height: 470px) {
+            font-size: 28vh;
+          }
+          @media screen and (max-width: map-get($grid-breakpoints, md)) {
+            font-size: 12vw;
+          }
+
         }
-      }
-      h2{
-        font-weight: 600;
-        text-shadow: 0.1vw 0.1vw 0.1vw #82898E;
-        font-size: 4vw;
-        @media screen and (max-width: map-get($grid-breakpoints, sm)) {
-          font-size: 7vw;
+        h2{
+          font-weight: 600;
+          text-shadow: 0.1vw 0.1vw 0.1vw #82898E;
+          font-size: 4vw;
+          @media screen and (max-height: 470px) {
+            font-size: 15vh;
+          }
+          @media screen and (max-width: map-get($grid-breakpoints, md)) {
+            font-size: 7vw;
+          }
+
         }
       }
     }
@@ -47,6 +58,9 @@
 .slide{
   position: relative;
   overflow: hidden;
+  .slide-wp{
+    position: relative;
+  }
 }
 
 .bcg{
@@ -55,7 +69,6 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: 1;
 }
 
 .fs{
