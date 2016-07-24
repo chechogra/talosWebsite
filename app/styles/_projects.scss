@@ -4,51 +4,42 @@
       position: relative;
       width: 40vw;
       height: 100%;
+      opacity: 0.3;
+      filter: Alpha(opacity=30);
+    }
+    .project-title{
+      color: white;
+      text-transform: uppercase;
+      line-height: 1;
+      padding: 0 40px;
+      position: absolute;
+      top: 50%;
+      left: 40vw;
+      transform: translate(-50%, -35%);
 
-      .colored-bg{
-        opacity: 0.3;
-        filter: Alpha(opacity=30);
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
-
-      .project-title{
-        color: white;
-        text-transform: uppercase;
-        line-height: 1.1;
-        padding: 0 40px;
-        position: absolute;
-        top: 50%;
-        right: 0;
-        transform: translate(50%, -30%);
-
-        h1{
-          font-weight: 900;
-          margin-bottom: 2vh;
-          text-shadow: 0.1vw 0.1vw 0.1vw #82898E;
+      h1{
+        font-weight: 900;
+        margin-bottom: 3vh;
+        text-shadow: 0.1vw 0.1vw 0.1vw #82898E;
+        font-size: 12vw;
+        @media screen and (min-width: map-get($grid-breakpoints, sm)) {
           font-size: 9vw;
-          @media screen and (max-height: 470px) {
-            font-size: 28vh;
-          }
-          @media screen and (max-width: map-get($grid-breakpoints, md)) {
-            font-size: 12vw;
-          }
-
         }
-        h2{
-          font-weight: 600;
-          text-shadow: 0.1vw 0.1vw 0.1vw #82898E;
-          font-size: 4vw;
-          @media screen and (max-height: 470px) {
-            font-size: 15vh;
-          }
-          @media screen and (max-width: map-get($grid-breakpoints, md)) {
-            font-size: 7vw;
-          }
 
+        @media screen and (max-height: 470px) and (min-width: map-get($grid-breakpoints, sm)) {
+          font-size: 20vh;
+        }
+      }
+      h2{
+        font-weight: 600;
+        text-shadow: 0.1vw 0.1vw 0.1vw #82898E;
+        font-size: 6vw;
+        @media screen and (min-width: map-get($grid-breakpoints, sm)) {
+          font-size: 4vw;
+        }
+
+        @media screen and (max-height: 470px) and (min-width: map-get($grid-breakpoints, sm)) {
+          font-size: 10vh;
         }
       }
     }
