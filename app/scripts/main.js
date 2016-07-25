@@ -25,38 +25,49 @@ TLCODE.utils = {
 TLCODE.header = {
   shrinkOn: 100,
   hideOn: 600,
-  header: null,
+  headerElement: null,
+  hamburgerElement: null,
   lastScrollDistance: 0,
   init: function(){
     var self = this;
-    this.header = $(document.querySelector("header.site-header"));
-    window.addEventListener('scroll', function(e){
-      var distanceY = window.pageYOffset || document.documentElement.scrollTop;
+    self.headerElement = $(document.querySelector("header.site-header"));
 
-      if (distanceY > self.hideOn) {
+    self.hamburgerElement = this.headerElement.find(".hamburger");
+    self.hamburgerElement.click(self.handleHamburgerClick);
 
-        if(distanceY > self.lastScrollDistance){
-          self.header.addClass("menu-hidden");
-        }else{
-          if (self.header.hasClass("menu-hidden")) {
-            self.header.removeClass("menu-hidden");
-          }
-        }
+    window.addEventListener('scroll', self.handleScrollEvent, TLCODE.utils.passiveeventlisteners ? {passive: true} : false);
+  },
+  handleHamburgerClick: function (e) {
+    var self = TLCODE.header;
+    self.hamburgerElement.toggleClass("is-active");
+  },
+  handleScrollEvent: function () {
+    var self = TLCODE.header;
+    var distanceY = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (distanceY > self.hideOn) {
+
+      if(distanceY > self.lastScrollDistance){
+        self.headerElement.addClass("menu-hidden");
       }else{
-        if (self.header.hasClass("menu-hidden")) {
-          self.header.removeClass("menu-hidden");
+        if (self.headerElement.hasClass("menu-hidden")) {
+          self.headerElement.removeClass("menu-hidden");
         }
       }
+    }else{
+      if (self.headerElement.hasClass("menu-hidden")) {
+        self.headerElement.removeClass("menu-hidden");
+      }
+    }
 
-      if (distanceY > self.shrinkOn) {
-        self.header.addClass("smaller");
-      } else {
-        if (self.header.hasClass("smaller")) {
-          self.header.removeClass("smaller");
-        }
+    if (distanceY > self.shrinkOn) {
+      self.headerElement.addClass("smaller");
+    } else {
+      if (self.headerElement.hasClass("smaller")) {
+        self.headerElement.removeClass("smaller");
       }
-      self.lastScrollDistance = distanceY;
-    }, TLCODE.utils.passiveeventlisteners ? {passive: true} : false);
+    }
+    self.lastScrollDistance = distanceY;
   }
 };
 
