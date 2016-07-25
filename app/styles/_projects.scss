@@ -157,5 +157,20 @@
         }
       }
     }
+    .slide3-bottom{
+      .slide-wp{
+        .colored-box{
+          position: absolute;
+          height: 100%;
+          width: 100vw;
+          transform: translateX(-10px);
+          //transform: translateX(-0.9375rem);
+        }
+        h2{
+          font-weight: 900;
+
+        }
+      }
+    }
   }
 }
