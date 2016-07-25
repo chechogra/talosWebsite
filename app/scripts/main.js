@@ -20,7 +20,7 @@ TLCODE.utils = {
 
     return supportsPassive;
   }
-}
+};
 
 TLCODE.header = {
   shrinkOn: 100,
